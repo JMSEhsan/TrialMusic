@@ -1,0 +1,21 @@
+# title: TrialMusic
+# author: Ehsan
+# description: Used https://earsketch.gatech.edu/ 
+
+from earsketch import *
+
+init() 
+setTempo(100) 
+def section_a(start, duration): 
+    for bar in range(start, start+duration): 
+        fitMedia(AK_UNDOG_ACOUSTIC_GUITAR_3, 1, bar, bar+2)
+        setEffect(1, VOLUME, GAIN, 0, 3, 12, 4)
+        makeBeat(IRCA_SALSA_1_BASS, 2, bar, '0+++++++00+++') 
+def section_b(start, duration): 
+    for bar in range(start, start+duration): 
+        makeBeat(OS_SNARE01, 2, bar, '----0-------0---') 
+        fitMedia(Y56_SYNTHHARP_1, 3, bar, bar+1) 
+section_a(1, 5) 
+section_b(7, 4) 
+section_a(11, 5) 
+finish() 
